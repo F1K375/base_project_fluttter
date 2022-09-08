@@ -1,6 +1,7 @@
 # base_project_flutter
 
-Base project for flutter
+Base project for flutter,
+Feel free to use and lets share base practice for flutter
 
 ## Getting Started
 
