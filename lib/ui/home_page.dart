@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'components/printer_one.dart';
+import 'components/printer_two.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -7,8 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(title: const Text("HOME")),
-      ),
+          appBar: AppBar(title: const Text("HOME")), body: PrinterOne()),
     );
   }
 }
