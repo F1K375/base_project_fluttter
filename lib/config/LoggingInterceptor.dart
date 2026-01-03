@@ -12,7 +12,8 @@ class LoggingInterceptor extends Interceptor {
   LoggingInterceptor();
 
   @override
-  Future onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
+  Future onRequest(
+      RequestOptions options, RequestInterceptorHandler handler) async {
     logPrint('*** API Request - Start ***');
 
     printKV('URI', options.uri);
@@ -28,7 +29,7 @@ class LoggingInterceptor extends Interceptor {
   }
 
   @override
-  void onError(DioError err, ErrorInterceptorHandler handler) {
+  void onError(DioException err, ErrorInterceptorHandler handler) {
     logPrint('*** Api Error - Start ***:');
 
     logPrint('URI: ${err.requestOptions.uri}');
@@ -37,7 +38,7 @@ class LoggingInterceptor extends Interceptor {
     }
     logPrint('$err');
     if (err.response != null) {
-      printKV('REDIRECT', err.response?.realUri ?? '');
+      logPrint('REDIRECT', err.response?.realUri ?? '');
       logPrint('BODY:');
       printAll(err.response?.data.toString());
     }
@@ -47,7 +48,8 @@ class LoggingInterceptor extends Interceptor {
   }
 
   @override
-  Future onResponse(Response response, ResponseInterceptorHandler handler) async {
+  Future onResponse(
+      Response response, ResponseInterceptorHandler handler) async {
     logPrint('*** Api Response - Start ***');
 
     printKV('URI', response.requestOptions.uri);

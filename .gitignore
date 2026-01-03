@@ -32,6 +32,13 @@ migrate_working_dir/
 .pub/
 /build/
 
+# Generated files
+*.freezed.dart
+*.g.dart
+*.injectable.dart
+*.config.dart
+*.mocks.dart
+
 # Web related
 lib/generated_plugin_registrant.dart
 
@@ -45,3 +52,14 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Test coverage
+coverage/
+
+# Environment variables
+.env
+.env.local
+
+# Temporary files
+*.tmp
+*.temp

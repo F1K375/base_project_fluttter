@@ -18,12 +18,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your config.
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(
-        statusBarColor: Colors.white,
-        statusBarIconBrightness: Brightness.dark,
-      ),
-    );
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: SystemUiOverlay.values);
 
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
@@ -35,12 +31,6 @@ class MyApp extends StatelessWidget {
               fontSizeFactor: 1,
               bodyColor: AppColor.black.shade200,
               displayColor: AppColor.black.shade300,
-            )
-            .copyWith(
-              button: Theme.of(context)
-                  .textTheme
-                  .button
-                  ?.copyWith(color: Colors.white),
             ),
       ),
       initialRoute: AppRoute.init,

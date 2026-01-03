@@ -9,8 +9,8 @@ abstract class DioModule {
   Dio get dio {
     final options = BaseOptions(
         headers: {"Accept": "application/json"},
-        connectTimeout: 15000,
-        receiveTimeout: 15000,
+        connectTimeout: const Duration(seconds: 15),
+        receiveTimeout: const Duration(seconds: 15),
         responseType: ResponseType.json);
     final dio = Dio(options);
 
